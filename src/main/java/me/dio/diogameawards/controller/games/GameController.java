@@ -1,4 +1,4 @@
-package me.dio.diogameawards.controller;
+package me.dio.diogameawards.controller.games;
 
 import java.util.List;
 
@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import me.dio.diogameawards.controller.BaseRestController;
 import me.dio.diogameawards.domain.model.Game;
 import me.dio.diogameawards.service.GameService;
 
 @RestController // O que vai ser exposto pro cliente
-public class GameController {
+public class GameController extends BaseRestController {
 	
 	@Autowired // Substitui o construtor
 	private GameService businessLayer;

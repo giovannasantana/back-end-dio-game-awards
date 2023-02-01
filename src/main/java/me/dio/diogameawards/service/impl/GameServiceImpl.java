@@ -10,7 +10,7 @@ import me.dio.diogameawards.domain.model.Game;
 import me.dio.diogameawards.domain.model.GameRepository;
 import me.dio.diogameawards.service.GameService;
 import me.dio.diogameawards.service.exception.BusinessException;
-import me.dio.diogameawards.service.exception.NoContentExeption;
+import me.dio.diogameawards.service.exception.NoContentException;
 
 @Service
 public class GameServiceImpl implements GameService {
@@ -27,7 +27,7 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public Game findById(Long id) {
 		Optional<Game> game = repository.findById(id);
-		return game.orElseThrow(() -> new NoContentExeption()); // tratando a excessão sem o if e else
+		return game.orElseThrow(() -> new NoContentException()); // tratando a excessão sem o if e else
 	}
 
 	@Override
