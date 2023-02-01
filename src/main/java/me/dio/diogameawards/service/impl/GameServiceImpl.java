@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import me.dio.diogameawards.domain.model.Game;
 import me.dio.diogameawards.domain.model.GameRepository;
-import me.dio.diogameawards.service.BusinessException;
 import me.dio.diogameawards.service.GameService;
+import me.dio.diogameawards.service.exception.BusinessException;
 import me.dio.diogameawards.service.exception.NoContentExeption;
 
 @Service

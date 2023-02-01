@@ -1,4 +1,4 @@
-package me.dio.diogameawards.service;
+package me.dio.diogameawards.service.exception;
 
 public class BusinessException extends RuntimeException {
 
