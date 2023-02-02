@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -39,7 +40,7 @@ public class GameController extends BaseRestController {
 		return ResponseEntity.ok(game);
 	}
 	
-	@PutMapping("games/{id}")
+	@PutMapping("games/{id}") // atualiza o objeto inteiro
 	public ResponseEntity<Game> update(@PathVariable Long id, @RequestBody Game game){
 		businessLayer.update(id, game);
 		return ResponseEntity.ok(game);
@@ -48,6 +49,12 @@ public class GameController extends BaseRestController {
 	@DeleteMapping("games/{id}")
 	public ResponseEntity<Game> delete(@PathVariable Long id){
 		businessLayer.delete(id);
+		return ResponseEntity.ok().build();
+	}
+	
+	@PatchMapping("games/{id}/vote") // utilizado para alterar um elemento ou parcial
+	public ResponseEntity<Game> update(@PathVariable Long id){
+		businessLayer.vote(id);
 		return ResponseEntity.ok().build();
 	}
 	
