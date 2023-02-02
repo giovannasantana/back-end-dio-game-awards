@@ -52,5 +52,14 @@ public class GameServiceImpl implements GameService {
 		//Geralmente inativa o dado e não o exclui de verdade
 		
 	}
+
+	@Override
+	public void vote(Long id) {
+		Game gameDb = findById(id);
+		gameDb.setVotes(gameDb.getVotes() + 1);
+		
+		update(id, gameDb);
+		
+	}
 	
 }
