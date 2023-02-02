@@ -1,5 +1,6 @@
 package me.dio.diogameawards.domain.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Game {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // Long com L aceita o null
 	private String name;
+	@Column(length = 500)
 	private String description;
 	private String cover;
 	private long votes; // long l o valor default é 0
